@@ -9,7 +9,7 @@ document.getElementById("btn").addEventListener("click", function() {
     } else if (value === "crazy"){
         gridDimension = 49;
     } else {
-        gridDimension = 0;
+        gridDimension=0;
     }
     playGame(gridDimension);
 });
@@ -77,9 +77,9 @@ function generateBombs(bombsNumber, dimension) {
 
 
 function whereAreThem(bombsList){
-    allElements = document.getElementsByClassName("box");
+    const allElements = document.getElementsByClassName("box");
     for (let q = 0; q<bombsList.length;q++){
         let bombIndex = bombsList[q];
-        allElements[bombIndex].classList.add("bomb");
+        allElements[bombIndex-1].classList.add("bomb");
     }
 }
