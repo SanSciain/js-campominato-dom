@@ -17,7 +17,7 @@ document.getElementById("btn").addEventListener("click", function() {
 
 function playGame(dimension){
     
-    bombList=generateBombs(16,dimension);
+    bombList=generateBombs(16, dimension);
     console.log(bombList);
     createGrid(dimension,bombList);
 }
@@ -60,12 +60,14 @@ function createGrid(dimension, redList) {
 }
 
 
-function generateBombs(bombsNumber,dimension) {
+function generateBombs(bombsNumber, dimension) {
     const bombsList = [];
-    for (let j=1; j<= bombsNumber;j++){
+    let j=0;
+    while (j<bombsNumber){
         numberBomb = Math.floor(Math.random() * (dimension - 1 + 1) ) + 1;
         if (!bombsList.includes(numberBomb)){
             bombsList.push(numberBomb);
+            j++;
         }
     }
     return bombsList;
