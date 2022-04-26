@@ -16,7 +16,6 @@ document.getElementById("btn").addEventListener("click", function() {
 
 
 function playGame(dimension){
-    
     bombList=generateBombs(16, dimension);
     console.log(bombList);
     createGrid(dimension,bombList);
@@ -27,6 +26,7 @@ function createGrid(dimension, redList) {
 
     const grid = document.querySelector(".grid");
     grid.innerHTML= "";
+    grid.style.pointerEvents="auto";
     console.log(grid);
     let counter=0;
 
