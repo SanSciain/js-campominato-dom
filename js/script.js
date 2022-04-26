@@ -44,6 +44,8 @@ function createGrid(dimension, redList) {
             if(redList.includes(i)){
                 this.classList.add("bomb");
                 alert(`hai perso \nil tuo punteggio è ${counter}`);
+                grid.style.pointerEvents="none";
+                whereAreThem(redList);
             } else{
                 this.classList.add("atv");
                 counter++;
@@ -73,3 +75,11 @@ function generateBombs(bombsNumber, dimension) {
     return bombsList;
 }
 
+
+function whereAreThem(bombsList){
+    allElements = document.getElementsByClassName("box");
+    for (let q = 0; q<bombsList.length;q++){
+        let bombIndex = bombsList[q];
+        allElements[bombIndex].classList.add("bomb");
+    }
+}
